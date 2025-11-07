@@ -1,0 +1,11 @@
+.modal {
+  position: relative;
+  border: 1px solid grey;
+}
+
+.close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  cursor: pointer;
+}

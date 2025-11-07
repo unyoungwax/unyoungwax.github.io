@@ -1,0 +1,7 @@
+// Reduce CSS specificity using :where() pseudo-class.
+:where(.heading) {
+  font-size: inherit;
+  font-weight: inherit;
+  margin-block: 0;
+  margin-inline: 0;
+}

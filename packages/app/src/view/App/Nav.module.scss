@@ -1,0 +1,21 @@
+.nav {
+  padding: 1em 2em;
+  background: rgb(240 240 240);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.button {
+  display: grid;
+}
+
+.content {
+  min-width: 10em;
+  padding: 1em;
+}

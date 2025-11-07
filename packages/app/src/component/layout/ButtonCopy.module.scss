@@ -1,0 +1,11 @@
+.button {
+  filter: opacity(0.5);
+
+  &:hover {
+    filter: none;
+  }
+}
+
+.icon {
+  display: block;
+}

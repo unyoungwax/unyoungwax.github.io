@@ -1,0 +1,29 @@
+// Reduce CSS specificity using :where() pseudo-class.
+:where(.input) {
+  min-width: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  outline: none;
+  border: none;
+
+  // Hide the arrow keys that comes default with input=number in WebKit browsers.
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // Hide the arrow keys that comes default with input=number in Firefox.
+  &[type="number"] {
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -moz-appearance: textfield;
+  }
+
+  // Set cursor to not-allowed when disabled
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "web-monorepo",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/eslint",
+    "packages/core",
+    "packages/app",
+    "packages/stylelint"
+  ]
+}

@@ -1,0 +1,5 @@
+// Reduce CSS specificity using :where() pseudo-class.
+:where(.link) {
+  color: inherit;
+  text-decoration: none;
+}

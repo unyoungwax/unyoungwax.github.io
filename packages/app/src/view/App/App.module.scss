@@ -1,0 +1,14 @@
+.app {
+  min-height: 100vh;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 20em 1fr;
+  gap: 1em;
+  padding: 1em 2em;
+}
+
+.column {
+  padding: 1em 2em;
+}
