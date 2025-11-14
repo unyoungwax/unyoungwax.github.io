@@ -1,8 +1,10 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { type HttpTransport } from "viem";
 import { WagmiProvider, createConfig, http } from "wagmi";
 import { bsc, mainnet, polygon, type Chain } from "wagmi/chains";
 import { injected, safe } from "wagmi/connectors";
+import { EvmConnectModal } from "./EvmConnectModal";
+import { EvmContext } from "./EvmContext";
 
 const connectors = [
   injected({
@@ -21,6 +23,8 @@ const connectors = [
 
 export function EvmProvider(props: React.PropsWithChildren) {
   const { children } = props;
+
+  const [connectModalVisible, setConnectModalVisible] = useState(false);
 
   const config = useMemo(() => {
     const chains: [Chain, ...Chain[]] = [
@@ -43,9 +47,19 @@ export function EvmProvider(props: React.PropsWithChildren) {
     });
   }, []);
 
+  const value = useMemo(() => {
+    return {
+      connectModalVisible,
+      setConnectModalVisible,
+    };
+  }, [connectModalVisible]);
+
   return (
     <WagmiProvider config={config}>
-      { children }
+      <EvmContext.Provider value={value}>
+        { children }
+        <EvmConnectModal />
+      </EvmContext.Provider>
     </WagmiProvider>
   );
 }

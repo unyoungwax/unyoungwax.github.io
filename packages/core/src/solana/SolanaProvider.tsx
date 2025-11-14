@@ -1,6 +1,6 @@
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
 import { useMemo, useState } from "react";
-import { ConnectModal } from "./ConnectModal";
+import { SolanaConnectModal } from "./SolanaConnectModal";
 import { SolanaContext } from "./SolanaContext";
 
 export type SolanaProviderProps = {
@@ -29,7 +29,7 @@ export function SolanaProvider(props: SolanaProviderProps) {
       <WalletProvider wallets={[]} autoConnect>
         <SolanaContext.Provider value={value}>
           { children }
-          <ConnectModal />
+          <SolanaConnectModal />
         </SolanaContext.Provider>
       </WalletProvider>
     </ConnectionProvider>

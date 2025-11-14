@@ -8,6 +8,7 @@ export * from "./component/layout/Modal";
 export * from "./entity/Token";
 export * from "./entity/TokenAmount";
 export * from "./evm/EvmConnectButton";
+export * from "./evm/EvmConnector";
 export * from "./evm/EvmProvider";
 export * from "./evm/UseEvmBalance";
 export * from "./evm/UseEvmBlockchain";

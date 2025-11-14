@@ -11,8 +11,7 @@
 
 .option {
   width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
   gap: 1em;
   background: rgb(240 240 240);

@@ -5,9 +5,9 @@ import { Modal } from "../component/layout/Modal";
 import { useSolanaBlockchain } from "./UseSolanaBlockchain";
 import { useSolanaContext } from "./UseSolanaContext";
 
-import styles from "./ConnectModal.module.scss";
+import styles from "./SolanaConnectModal.module.scss";
 
-export function ConnectModal() {
+export function SolanaConnectModal() {
   const { wallets, connect } = useSolanaBlockchain();
   const { connectModalVisible, setConnectModalVisible } = useSolanaContext();
 
@@ -34,7 +34,11 @@ export function ConnectModal() {
         <div>
           {
             wallets.map((item) => (
-              <Button key={item.adapter.name} onClick={() => handleConnect(item.adapter)} className={styles.option}>
+              <Button
+                key={item.adapter.name}
+                onClick={() => handleConnect(item.adapter)}
+                className={styles.option}
+              >
                 <img src={item.adapter.icon} alt="" className={styles.image} />
                 <div>{ item.adapter.name }</div>
               </Button>
