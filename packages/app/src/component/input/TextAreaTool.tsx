@@ -1,6 +1,6 @@
 import { copyText, TextArea } from "@web/core";
 import { useCallback } from "react";
-import { ButtonCopy } from "./ButtonCopy";
+import { ButtonCopy } from "../layout/ButtonCopy";
 
 import styles from "./TextAreaTool.module.scss";
 

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
+import { TextAreaTool } from "../../component/input/TextAreaTool";
 import { DetailRow } from "../../component/layout/DetailRow";
-import { TextAreaTool } from "../../component/layout/TextAreaTool";
 import { type Base } from "../../entity/Base";
 
 import styles from "./Row.module.scss";

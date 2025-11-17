@@ -1,5 +1,6 @@
 .content {
-  background: rgb(240 240 240);
+  border: 1px solid var(--palette-border);
+  border-radius: 4px;
 }
 
 .textarea {

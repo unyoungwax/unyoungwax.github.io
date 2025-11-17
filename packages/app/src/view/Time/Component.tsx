@@ -1,8 +1,8 @@
 import { useClock } from "@web/core";
 import { useMemo } from "react";
+import { TextAreaTool } from "../../component/input/TextAreaTool";
 import { DetailRow } from "../../component/layout/DetailRow";
 import { PageStandard } from "../../component/layout/PageStandard";
-import { TextAreaTool } from "../../component/layout/TextAreaTool";
 import { TextCopy } from "../../component/layout/TextCopy";
 
 import styles from "./Component.module.scss";
