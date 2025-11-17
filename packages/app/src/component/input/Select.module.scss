@@ -2,7 +2,14 @@
   border: 1px solid var(--palette-border);
   border-radius: 4px;
   padding: 0.5em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   text-align: start;
+}
+
+.icon {
+  display: block;
 }
 
 .options {

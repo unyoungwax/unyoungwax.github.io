@@ -1,3 +1,4 @@
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Button, Popover } from "@web/core";
 import classNames from "classnames";
 import { useCallback, useMemo, useRef, useState } from "react";
@@ -38,7 +39,8 @@ export function Select<T>(props: SelectProps<T>) {
         onClick={handleToggle}
         className={classNames(styles.button, className)}
       >
-        { optionSelected?.label }
+        <div>{ optionSelected?.label }</div>
+        <KeyboardArrowDownIcon fontSize="inherit" className={styles.icon} />
       </Button>
       <Popover
         visible={visible}
