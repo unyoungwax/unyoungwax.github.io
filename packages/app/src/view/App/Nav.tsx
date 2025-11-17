@@ -3,6 +3,7 @@ import { Drawer } from "@mui/material";
 import { Button, H1 } from "@web/core";
 import { useCallback, useState } from "react";
 import { Menu } from "./Menu";
+import { ThemeToggle } from "./ThemeToggle";
 
 import styles from "./Nav.module.scss";
 
@@ -20,6 +21,7 @@ function NavFull() {
   return (
     <div className={styles.nav}>
       <H1 className={styles.title}>Misc Tool</H1>
+      <ThemeToggle />
     </div>
   );
 }
@@ -42,6 +44,7 @@ function NavMobile() {
           <MenuIcon />
         </Button>
         <H1 className={styles.title}>Misc Tool</H1>
+        <ThemeToggle />
       </div>
       <Drawer
         open={visible}

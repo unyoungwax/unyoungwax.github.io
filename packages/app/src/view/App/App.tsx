@@ -15,7 +15,7 @@ export function App() {
 
   if (isWide) {
     return (
-      <div>
+      <div className={styles.app}>
         <Nav isWide={isWide} />
         <div className={styles.columns}>
           <Menu />
@@ -26,7 +26,7 @@ export function App() {
   }
 
   return (
-    <div>
+    <div className={styles.app}>
       <Nav isWide={isWide} />
       <div className={styles.column}>
         <Outlet />
