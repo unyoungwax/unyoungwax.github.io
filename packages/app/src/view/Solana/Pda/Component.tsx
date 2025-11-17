@@ -1,4 +1,3 @@
-import { BN, utils } from "@coral-xyz/anchor";
 import { PublicKey } from "@solana/web3.js";
 import { Input } from "@web/core";
 import { useCallback, useMemo, useState } from "react";
@@ -6,7 +5,7 @@ import { PageStandard } from "../../../component/layout/PageStandard";
 import { TextCopy } from "../../../component/layout/TextCopy";
 import { ListArrange } from "./ListArrange";
 import { RowSeed } from "./RowSeed";
-import { type Seed } from "./Seed";
+import { getBuffer, type Seed } from "./Seed";
 
 import styles from "./Component.module.scss";
 
@@ -16,21 +15,7 @@ export function Component() {
 
   const pda = useMemo(() => {
     try {
-      const seeds = seedInputs.map((seedInput) => {
-        switch (seedInput.type) {
-          case "PublicKey":
-            return new PublicKey(seedInput.input).toBuffer();
-
-          case "String":
-            return utils.bytes.utf8.encode(seedInput.input);
-
-          case "u8":
-            return new BN(seedInput.input).toArrayLike(Buffer, "be", 1);
-
-          default:
-            throw new Error("Unknown seed type.");
-        }
-      });
+      const seeds = seedInputs.map(getBuffer);
 
       const [publicKey, bump] = PublicKey.findProgramAddressSync(seeds, new PublicKey(programId));
 

@@ -1,11 +1,15 @@
 .row {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 1em;
+  gap: 0.2em 0.5em;
 }
 
 .input {
   border: 1px solid var(--palette-border);
   border-radius: 4px;
   padding: 0.5em;
+}
+
+.message {
+  grid-column: 2;
 }

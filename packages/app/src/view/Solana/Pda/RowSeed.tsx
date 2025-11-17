@@ -1,6 +1,7 @@
 import { Input } from "@web/core";
-import { useCallback } from "react";
-import { type Seed, type SeedType } from "./Seed";
+import { useCallback, useMemo } from "react";
+import { MessageError } from "../../../component/message/MessageError";
+import { getBuffer, type Seed, type SeedType } from "./Seed";
 import { SelectSeed } from "./SelectSeed";
 
 import styles from "./RowSeed.module.scss";
@@ -12,6 +13,16 @@ export type RowSeedProps = {
 
 export function RowSeed(props: RowSeedProps) {
   const { value, onChange } = props;
+
+  const errorMessage = useMemo(() => {
+    try {
+      getBuffer(value);
+
+      return null;
+    } catch (err) {
+      return (err instanceof Error) ? err.message : "Unknown error.";
+    }
+  }, [value]);
 
   const handleType = useCallback((type: SeedType) => {
     onChange({
@@ -39,6 +50,9 @@ export function RowSeed(props: RowSeedProps) {
         placeholder="Enter value here"
         className={styles.input}
       />
+      <MessageError className={styles.message}>
+        { errorMessage }
+      </MessageError>
     </div>
   );
 }
