@@ -11,10 +11,11 @@
 
 .option {
   width: 100%;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   gap: 1em;
-  background: rgb(240 240 240);
+  background: var(--palette-pane);
   padding: 0.5em 1em;
   text-align: start;
   cursor: pointer;

@@ -5,6 +5,8 @@ export const LightTheme: Theme = {
   variables: {
     "--palette-normal": "white",
     "--palette-normal-text": "black",
+    "--palette-primary": "#1889E6",
+    "--palette-primary-text": "white",
     "--palette-pane": "rgb(0 0 0 / 0.1)",
     "--palette-border": "rgb(191 191 191)",
     "--palette-shadow": "rgb(191 191 191)",
@@ -16,6 +18,8 @@ export const DarkTheme: Theme = {
   variables: {
     "--palette-normal": "#121212",
     "--palette-normal-text": "white",
+    "--palette-primary": "#1889E6",
+    "--palette-primary-text": "white",
     "--palette-pane": "rgb(255 255 255 / 0.1)",
     "--palette-border": "rgb(63 63 63)",
     "--palette-shadow": "rgb(63 63 63)",

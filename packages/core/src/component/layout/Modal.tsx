@@ -10,9 +10,10 @@ const StyledDialog = styled(Dialog)`
     backdrop-filter: blur(0.5em);
   }
   & .MuiDialog-paper {
-    background: none;
-    box-shadow: none;
     margin: 0;
+    box-shadow: 0 0 0.5em var(--palette-shadow);
+    background: var(--palette-normal);
+    color: var(--palette-normal-text);
   }
 `;
 
