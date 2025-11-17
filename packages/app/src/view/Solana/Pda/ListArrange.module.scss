@@ -1,0 +1,29 @@
+.items {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.icon {
+  display: block;
+}
+
+.append {
+  border-radius: 4px;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(240 240 240);
+}
+
+.add {
+  display: block;
+}

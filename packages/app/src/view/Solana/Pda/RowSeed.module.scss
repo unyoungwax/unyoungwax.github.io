@@ -1,0 +1,11 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+}
+
+.input {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 0.5em;
+}

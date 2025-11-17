@@ -5,6 +5,7 @@ export * from "./component/html/TextArea";
 export * from "./component/layout/LinkExternal";
 export * from "./component/layout/LinkLocal";
 export * from "./component/layout/Modal";
+export * from "./component/layout/Popover";
 export * from "./entity/Token";
 export * from "./entity/TokenAmount";
 export * from "./evm/EvmConnectButton";

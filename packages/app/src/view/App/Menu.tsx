@@ -19,8 +19,11 @@ export function Menu(props: MenuProps) {
       href: Pathname.Evm,
       label: "EVM",
     }, {
-      href: Pathname.Solana,
+      href: Pathname.Solana.Wallet,
       label: "Solana",
+    }, {
+      href: Pathname.Solana.Pda,
+      label: "PDA",
     }, {
       href: Pathname.Time,
       label: "Time",

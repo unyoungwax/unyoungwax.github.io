@@ -16,6 +16,10 @@ export function TextCopy(props: TextCopyProps) {
     return copyText(children?.toString());
   }, [children]);
 
+  if (children == null || children === "") {
+    return <div className={className} />;
+  }
+
   return (
     <div className={className}>
       <span>{ children } </span>
