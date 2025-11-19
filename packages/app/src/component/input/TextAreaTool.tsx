@@ -8,13 +8,14 @@ export type TextAreaToolProps = {
   value?: string;
   onChange?: (value: string) => void;
   name?: string;
-  placeholder?: string;
+  disabled?: boolean;
   readOnly?: boolean;
+  placeholder?: string;
   rows?: number;
 };
 
 export function TextAreaTool(props: TextAreaToolProps) {
-  const { value, onChange, name, placeholder, readOnly, rows = 1 } = props;
+  const { value, onChange, name, disabled, readOnly, placeholder, rows = 1 } = props;
 
   const handleCopy = useCallback(() => {
     return copyText(value);
@@ -26,8 +27,9 @@ export function TextAreaTool(props: TextAreaToolProps) {
         value={value}
         onChange={onChange}
         name={name}
-        placeholder={placeholder}
+        disabled={disabled}
         readOnly={readOnly}
+        placeholder={placeholder}
         rows={rows}
         className={styles.textarea}
       />

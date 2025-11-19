@@ -1,6 +1,6 @@
-import { sha256 } from "@web/core";
+import { hash } from "@web/core";
 import { useCallback, useMemo, useState } from "react";
-import { InputTool } from "../../component/input/InputTool";
+import { TextAreaTool } from "../../component/input/TextAreaTool";
 import { PageStandard } from "../../component/layout/PageStandard";
 import { Encoding } from "../../entity/Encode";
 import { SelectEncoding } from "./SelectEncoding";
@@ -32,16 +32,16 @@ export function Component() {
     setInput((state) => ({ ...state, value }));
   }, []);
 
-  const hash = useMemo(() => {
+  const result = useMemo(() => {
     if (input.value === "") {
       return "";
     }
 
     const buffer = Buffer.from(input.value, input.inputEncoding);
 
-    const result = sha256(buffer);
+    const output = hash("sha256", buffer);
 
-    return result.toString(input.outputEncoding);
+    return output.toString(input.outputEncoding);
   }, [input]);
 
   return (
@@ -52,24 +52,24 @@ export function Component() {
           value={input.inputEncoding}
           onChange={handleInputEncoding}
         />
-        <InputTool
-          value={input.value}
-          onChange={handleInputValue}
-          placeholder="Enter value here"
-        />
       </div>
-      <div className={styles.header}>SHA-256</div>
+      <TextAreaTool
+        value={input.value}
+        onChange={handleInputValue}
+        placeholder="Enter value here"
+      />
+      <div className={styles.header}>Output</div>
       <div className={styles.row}>
         <SelectEncoding
           value={input.outputEncoding}
           onChange={handleOutputEncoding}
         />
-        <InputTool
-          value={hash}
-          onChange={handleInputValue}
-          readOnly
-        />
       </div>
+      <TextAreaTool
+        value={result}
+        onChange={handleInputValue}
+        readOnly
+      />
     </PageStandard>
   );
 }

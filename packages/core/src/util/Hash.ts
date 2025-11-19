@@ -1,10 +1,10 @@
 import { type Buffer } from "node:buffer";
 import { createHash } from "node:crypto";
 
-export function sha256(buffer: Buffer): Buffer {
-  const hash = createHash("sha256");
+export function hash(algorithm: string, buffer: Buffer): Buffer {
+  const instance = createHash(algorithm);
 
-  hash.update(buffer);
+  instance.update(buffer);
 
-  return hash.digest();
+  return instance.digest();
 }
