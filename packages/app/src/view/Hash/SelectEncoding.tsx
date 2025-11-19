@@ -3,8 +3,8 @@ import { Select } from "../../component/input/Select";
 import { Encoding } from "../../entity/Encode";
 
 export type SelectEncodingProps = {
-  value: string;
-  onChange: (value: string) => void;
+  value: BufferEncoding;
+  onChange: (value: BufferEncoding) => void;
 };
 
 export function SelectEncoding(props: SelectEncodingProps) {

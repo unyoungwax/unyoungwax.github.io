@@ -3,14 +3,6 @@
   font-weight: bold;
 }
 
-.input {
-  box-sizing: border-box;
-  width: 100%;
-  border: 1px solid var(--palette-border);
-  border-radius: 4px;
-  padding: 0.5em;
-}
-
 .rows {
   display: grid;
   grid-template-columns: 8em 1fr;

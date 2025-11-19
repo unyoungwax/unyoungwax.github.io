@@ -1,6 +1,6 @@
 import { PublicKey } from "@solana/web3.js";
-import { Input } from "@web/core";
 import { useCallback, useMemo, useState } from "react";
+import { InputTool } from "../../../component/input/InputTool";
 import { PageStandard } from "../../../component/layout/PageStandard";
 import { TextCopy } from "../../../component/layout/TextCopy";
 import { ListArrange } from "./ListArrange";
@@ -53,11 +53,10 @@ export function Component() {
   return (
     <PageStandard title="Program-Derived Address (PDA)">
       <div className={styles.header}>Program ID</div>
-      <Input
+      <InputTool
         value={programId}
         onChange={setProgramId}
         placeholder="Enter value here"
-        className={styles.input}
       />
       <div className={styles.header}>Seeds</div>
       <ListArrange

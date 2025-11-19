@@ -1,5 +1,5 @@
-import { Input } from "@web/core";
 import { useCallback, useMemo } from "react";
+import { InputTool } from "../../../component/input/InputTool";
 import { MessageError } from "../../../component/message/MessageError";
 import { getBuffer, type Seed, type SeedType } from "./Seed";
 import { SelectSeed } from "./SelectSeed";
@@ -44,11 +44,10 @@ export function RowSeed(props: RowSeedProps) {
         value={value.type}
         onChange={handleType}
       />
-      <Input
+      <InputTool
         value={value.input}
         onChange={handleInput}
         placeholder="Enter value here"
-        className={styles.input}
       />
       <MessageError className={styles.message}>
         { errorMessage }
