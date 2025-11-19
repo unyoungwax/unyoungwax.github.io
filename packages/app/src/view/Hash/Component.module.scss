@@ -2,3 +2,8 @@
   margin: 2em 0 1em;
   font-weight: bold;
 }
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
