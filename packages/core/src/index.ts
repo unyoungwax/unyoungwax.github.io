@@ -33,5 +33,6 @@ export * from "./theme/UseThemeContext";
 export * from "./util/Big";
 export * from "./util/Format";
 export * from "./util/Function";
+export * from "./util/Hash";
 export * from "./util/Navigator";
 export * from "./util/String";

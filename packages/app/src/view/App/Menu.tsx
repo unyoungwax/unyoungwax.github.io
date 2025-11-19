@@ -23,6 +23,9 @@ export function Menu(props: MenuProps) {
       href: Pathname.Base,
       label: "Base",
     }, {
+      href: Pathname.Hash,
+      label: "Hash",
+    }, {
       href: Pathname.Evm,
       label: "EVM",
     }, {

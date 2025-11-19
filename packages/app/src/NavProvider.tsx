@@ -12,6 +12,9 @@ const router = createHashRouter([{
     path: Pathname.Base,
     lazy: () => import("./view/Base/Component"),
   }, {
+    path: Pathname.Hash,
+    lazy: () => import("./view/Hash/Component"),
+  }, {
     path: Pathname.Evm,
     lazy: () => import("./view/Evm/Component"),
   }, {
