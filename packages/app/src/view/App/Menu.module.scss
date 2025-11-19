@@ -1,4 +1,34 @@
 .item {
-  display: block;
+  box-sizing: border-box;
+  width: 100%;
   padding: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  text-align: start;
+
+  > :first-child {
+    flex: 1 1 auto;
+  }
+}
+
+.container {
+  padding-left: 1em;
+  display: grid;
+  grid-template-rows: 1fr;
+  animation: expand 0.2s ease-in-out;
+}
+
+.content {
+  overflow: hidden;
+}
+
+@keyframes expand {
+  0% {
+    grid-template-rows: 0fr;
+  }
+
+  100% {
+    grid-template-rows: 1fr;
+  }
 }
