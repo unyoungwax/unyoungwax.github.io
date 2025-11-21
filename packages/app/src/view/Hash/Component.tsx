@@ -1,4 +1,4 @@
-import { hash } from "@web/core";
+import { hash, HashAlgorithm } from "@web/core";
 import { useCallback, useMemo, useState } from "react";
 import { TextAreaTool } from "../../component/input/TextAreaTool";
 import { PageStandard } from "../../component/layout/PageStandard";
@@ -6,11 +6,13 @@ import { Encoding } from "../../entity/Encode";
 import { SelectEncoding } from "./SelectEncoding";
 
 import styles from "./Component.module.scss";
+import { SelectHashAlgorithm } from "./SelectHashAlgorithm";
 
 type State = {
   inputEncoding: BufferEncoding;
   outputEncoding: BufferEncoding;
   value: string;
+  hashAlgorithm: string;
 };
 
 export function Component() {
@@ -18,6 +20,7 @@ export function Component() {
     inputEncoding: Encoding.Hex,
     outputEncoding: Encoding.Hex,
     value: "",
+    hashAlgorithm: HashAlgorithm.md5,
   });
 
   const handleInputEncoding = useCallback((inputEncoding: BufferEncoding) => {
@@ -32,14 +35,14 @@ export function Component() {
     setInput((state) => ({ ...state, value }));
   }, []);
 
-  const result = useMemo(() => {
-    if (input.value === "") {
-      return "";
-    }
+  const handleHashAlgoritm = useCallback((hashAlgorithm: string) => {
+    setInput((state) => ({ ...state, hashAlgorithm }));
+  }, []);
 
+  const result = useMemo(() => {
     const buffer = Buffer.from(input.value, input.inputEncoding);
 
-    const output = hash("sha256", buffer);
+    const output = hash(input.hashAlgorithm, buffer);
 
     return output.toString(input.outputEncoding);
   }, [input]);
@@ -63,6 +66,10 @@ export function Component() {
         <SelectEncoding
           value={input.outputEncoding}
           onChange={handleOutputEncoding}
+        />
+        <SelectHashAlgorithm
+          value={input.hashAlgorithm}
+          onChange={handleHashAlgoritm}
         />
       </div>
       <TextAreaTool
