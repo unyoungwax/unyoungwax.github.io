@@ -1,8 +1,9 @@
 import { useCallback } from "react";
 import { type Chain } from "viem";
 import {
-  useAccount,
   useConnect,
+  useConnection,
+  useConnectors,
   useDisconnect,
   usePublicClient,
   useSwitchChain,
@@ -10,10 +11,11 @@ import {
 } from "wagmi";
 
 export function useEvmBlockchain() {
-  const { chainId, address } = useAccount();
+  const { chainId, address } = useConnection();
+  const connectors = useConnectors();
   const publicClient = usePublicClient();
   const { data: walletClient } = useWalletClient();
-  const { connectors, connectAsync } = useConnect();
+  const { connectAsync } = useConnect();
   const { disconnectAsync } = useDisconnect();
   const { switchChainAsync } = useSwitchChain();
 

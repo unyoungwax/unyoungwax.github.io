@@ -18,6 +18,8 @@ export * from "./evm/UseEvmContext";
 export * from "./hook/UseClock";
 export * from "./hook/UseQueryData";
 export * from "./hook/UseWindowSize";
+export * from "./i18n/I18nContext";
+export * from "./i18n/I18nProvider";
 export * from "./provider/QueryProvider";
 export * from "./solana/ConnectionClient";
 export * from "./solana/SolanaConnectButton";
