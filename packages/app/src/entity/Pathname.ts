@@ -1,7 +1,9 @@
 export const Pathname = {
   Base: "/base",
   Hash: "/hash",
-  Evm: "/evm",
+  Evm: {
+    Wallet: "/evm/wallet",
+  },
   Solana: {
     Wallet: "/solana/wallet",
     Pda: "/solana/pda",

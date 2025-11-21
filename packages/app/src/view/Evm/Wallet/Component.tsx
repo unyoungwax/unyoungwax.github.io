@@ -1,7 +1,7 @@
 import { EvmConnectButton, useEvmBalance, useEvmBlockchain } from "@web/core";
-import { DetailRow } from "../../component/layout/DetailRow";
-import { PageStandard } from "../../component/layout/PageStandard";
-import { TextCopy } from "../../component/layout/TextCopy";
+import { DetailRow } from "../../../component/layout/DetailRow";
+import { PageStandard } from "../../../component/layout/PageStandard";
+import { TextCopy } from "../../../component/layout/TextCopy";
 
 import styles from "./Component.module.scss";
 

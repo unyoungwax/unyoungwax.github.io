@@ -26,8 +26,12 @@ export function Menu(props: MenuProps) {
       href: Pathname.Hash,
       label: "Hash",
     }, {
-      href: Pathname.Evm,
+      href: Pathname.Evm.Wallet,
       label: "EVM",
+      children: [{
+        href: Pathname.Evm.Wallet,
+        label: "Wallet",
+      }],
     }, {
       href: Pathname.Solana.Wallet,
       label: "Solana",

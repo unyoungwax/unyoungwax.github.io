@@ -11,7 +11,10 @@ import styles from "./Component.module.scss";
 
 export function Component() {
   const [programId, setProgramId] = useState("");
-  const [seedInputs, setSeedInputs] = useState<Seed[]>([]);
+  const [seedInputs, setSeedInputs] = useState<Seed[]>([{
+    type: "String",
+    input: "",
+  }]);
 
   const pda = useMemo(() => {
     try {

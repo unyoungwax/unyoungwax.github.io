@@ -15,8 +15,8 @@ const router = createHashRouter([{
     path: Pathname.Hash,
     lazy: () => import("./view/Hash/Component"),
   }, {
-    path: Pathname.Evm,
-    lazy: () => import("./view/Evm/Component"),
+    path: Pathname.Evm.Wallet,
+    lazy: () => import("./view/Evm/Wallet/Component"),
   }, {
     path: Pathname.Solana.Wallet,
     lazy: () => import("./view/Solana/Wallet/Component"),
