@@ -1,6 +1,15 @@
 import { Popover as PopoverInternal, type PopoverProps as PopoverPropsInternal } from "@mui/material";
 import { useCallback, useMemo } from "react";
 
+const sx = {
+  "& .MuiPopover-paper": {
+    background: "var(--palette-normal)",
+    color: "var(--palette-normal-text)",
+    borderRadius: "0.25em",
+    boxShadow: "0 0 0.5em 0 var(--palette-shadow)",
+  },
+};
+
 export type PopoverProps = {
   anchorEl: PopoverPropsInternal["anchorEl"];
   visible?: boolean;
@@ -47,6 +56,7 @@ export function Popover(props: PopoverProps) {
       onClose={handleClose}
       anchorOrigin={anchorOrigin}
       transformOrigin={transformOrigin}
+      sx={sx}
       slotProps={slotProps}
       disableScrollLock={disableScrollLock}
       disableRestoreFocus={disableRestoreFocus}
